@@ -1,0 +1,46 @@
+
+  <mat-card fxLayout="row" >
+  <!-- <div class="userDiv" (click)="BackGroundcolor()" [style.border-color]="allTaskCompleted? 'green' : 'red' " [style.background-color]="backGroungColorforUser? 'orange':''"> -->
+    <div class="userDiv"  [style.border-color]="allTaskCompleted? 'green' : 'red' " [style.background-color]="backGroungColorforUser? 'orange':''">
+
+    <div class="space">
+      <form #f="ngForm" (ngSubmit)="updateUser()">
+       
+        <mat-card-title>
+          <div (click)="VisibleTaskpost()">
+            <label for="userid" >ID:</label>{{userid}}<br>
+          </div>
+      
+        </mat-card-title>
+        <label for="userName">Name:</label>
+        <input type="text"  name="userName" [(ngModel)]="user.userName"> <br>
+        <label for="userEmail">Email:</label>
+        <input type="text"  name="userEmail"[(ngModel)]="user.email"> <br><br>
+
+      
+         <button (mouseover)="otherData=true" (click)="otherData=false" class="otherData" type="button"> Other Data </button>
+        <div [style.display]="otherData? 'block' : 'none'" class="otherDataTrue">
+          <label for="userStreet">Street:</label>
+          <input type="text" name="userStreet" class="inputgrey" [(ngModel)]="user.street"> <br>
+          <label for="userCity">City:</label>
+        <input type="text" name="userCity" class="inputgrey" [(ngModel)]="user.city"> <br>
+        <label for="userZipCode">ZipCode:</label>
+        <input type="text" name="userZipCode" class="inputgrey" [(ngModel)]="user.zipcode"> <br>
+        </div>
+        <br>
+        <mat-card-actions >
+          <div fxLayout="row-reverse" style="margin: 5px;" >
+          <button type="button" mat-flat-button (click)="deleteUser()" color="warn">Delete</button>&nbsp;
+          <button type="submit"  value="Update" mat-flat-button color="primary">Update</button> 
+        </div>
+        </mat-card-actions>
+      </form>
+  </div>
+
+ </div>
+</mat-card>
+
+
+
+
+

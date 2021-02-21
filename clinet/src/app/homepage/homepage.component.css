@@ -1,0 +1,13 @@
+
+
+.userCard{
+    margin: 2px;
+}
+
+
+.border{
+    border-color: darkolivegreen;
+    border-style: solid;
+    margin: 10px;
+    border-radius: 6px;
+}

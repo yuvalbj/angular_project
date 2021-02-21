@@ -1,0 +1,35 @@
+.userDiv
+{
+    border-style : solid;
+   padding: 5px;
+}
+
+.true{
+    border-color: red;
+}
+
+.false{
+    border-color: green;
+}
+.otherData{
+    width: 100px;
+    background-color: lightgray;
+    padding: 5px;
+}
+
+.otherDataTrue
+{
+    border-color:rgb(53, 49, 49);
+    border-style : solid;
+    border-radius: 10px;
+    background-color: lightgray;
+}
+
+.inputgrey
+{
+    padding: 2px;
+    background-color: lightgray;
+}
+
+
+

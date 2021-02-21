@@ -1,0 +1,17 @@
+<mat-card class="data-card">
+<mat-card-header>
+   <h3>Add New User</h3> 
+</mat-card-header>
+    <form #f="ngForm" (ngSubmit)="addNewUser()">
+        <label for="usrname">Name:</label>
+       <input required name="usrname" type="text" [(ngModel)]="newUser.userName"> <br/>
+       <label required for="usremail"> Email:</label>
+        <input name="usremail" type="email" [(ngModel)]="newUser.email">
+    <mat-card-actions>
+        
+        <button type="button" (click)="cancel()" mat-flat-button>Cancel</button>
+       <button type="submit" [disabled]="!f.valid" mat-flat-button>Add</button>
+    </mat-card-actions>
+</form>   
+
+</mat-card>

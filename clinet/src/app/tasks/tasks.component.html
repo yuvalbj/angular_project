@@ -1,0 +1,9 @@
+<mat-card class="data-card">
+<mat-card-content>
+Title: {{tasksForUser.title}}<br/>
+
+Completed: {{tasksForUser.completed}}<br/>
+</mat-card-content>
+<button (click)="markComplete()" [style.display]="tasksForUser.completed? 'none' : 'block'" mat-flat-button color="primary">Mark Completed</button>
+
+</mat-card>

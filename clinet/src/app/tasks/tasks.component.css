@@ -1,0 +1,14 @@
+div
+{
+    border-color: purple;
+    border-style : solid;
+
+}
+
+
+.data-card
+{
+    margin: 10px; 
+    position: relative; 
+    min-width: 300px;
+}

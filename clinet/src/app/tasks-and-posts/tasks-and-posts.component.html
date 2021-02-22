@@ -4,8 +4,8 @@
 
     <mat-card-header>
         <div>
-         <h3> {{currentuser.userName}} Tasks </h3>
-         <button type="button" (click)="ShowNewTask()">Add</button>
+         <h3> {{currentuser.userName}} Tasks <button type="button" mat-stroked-button (click)="ShowNewTask()">Add</button>
+         </h3>
         </div>
     </mat-card-header>
     <mat-card-content>
@@ -19,8 +19,8 @@
                     <label for="tasktile">Title:</label>
                     <input type="text" name="title" required [(ngModel)]="newTask.title">              
                 <mat-card-actions>
-                    <button type="button" (click)="visibleNewTask =!visibleNewTask">Cancel</button>
-                    <button type="submit" [disabled]="!f.valid">Add Task</button>            
+                    <button type="button" mat-stroked-button (click)="visibleNewTask =!visibleNewTask">Cancel</button>
+                    <button type="submit" mat-stroked-button [disabled]="!f.valid">Add Task</button>            
                   </mat-card-actions>
                 </form>
             </mat-card>      
@@ -33,7 +33,7 @@
 
     <mat-card-header>
          <h3> {{currentuser.userName}} Posts
-            <button type="button"  (click)="ShowNewPost()">Add</button>
+            <button type="button" mat-stroked-button (click)="ShowNewPost()">Add</button>
          </h3> 
     </mat-card-header>
     <mat-card-content>
@@ -49,8 +49,8 @@
                     <label for="postbody">Body:</label>
                     <input type="text" name="body" required [(ngModel)]="newPost.body">             
                 <mat-card-actions>
-                    <button type="button" (click)="visibleNewPost =!visibleNewPost">Cancel</button>
-                    <button type="submit" [disabled]="!f1.valid">Add Post</button>            
+                    <button type="button" mat-stroked-button (click)="visibleNewPost =!visibleNewPost">Cancel</button>
+                    <button type="submit" mat-stroked-button [disabled]="!f1.valid">Add Post</button>            
                   </mat-card-actions>
                 </form>
             </mat-card>      

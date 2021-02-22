@@ -3,11 +3,11 @@
     <div class="border">
         <mat-card>
             <mat-card-content>
-                    <mat-card-header>
-                        <form #f="ngForm" >
+                    <mat-card-header >
+                        <form fxFlex="40" #f="ngForm" >
                             Search: <input type="text" name="search" [(ngModel)]="search" (keyup)="searchfor()"> 
                         </form> &nbsp;
-                      <button mat-button (click)="addNewUSer()">Add</button>
+                      <button fxFlex="5" mat-stroked-button (click)="addNewUSer()">Add</button>
                     </mat-card-header>
                 <div *ngFor="let user of users" >
                     <app-user class="userCard" [userid]="user._id" (notify)="visibleTasksPosts(user, $event)"></app-user>

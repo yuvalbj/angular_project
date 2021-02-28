@@ -1,3 +1,4 @@
+import { Post } from './../post';
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
@@ -10,7 +11,7 @@ export class PostsComponent implements OnInit {
   constructor() { }
 
   @Input()
-  postsForUser : any;
+  postsForUser : Post = new Post();
   
   ngOnInit(): void {
   }

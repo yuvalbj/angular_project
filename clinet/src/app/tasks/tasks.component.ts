@@ -12,7 +12,7 @@ import { UserServiceService } from '../user-service.service';
 export class TasksComponent implements OnInit {
 
   constructor(private utils: UserServiceService) { }
-
+  sub : Subscription;
 
 
   @Input()
@@ -32,5 +32,11 @@ export class TasksComponent implements OnInit {
   ngOnInit(): void {
   }
 
-
+  ngOnDestroy()
+  {
+    if(this.sub != null)
+    {
+      this.sub.unsubscribe();
+    }
+  }
 }

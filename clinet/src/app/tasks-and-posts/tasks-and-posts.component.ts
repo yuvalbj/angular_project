@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { title } from 'process';
 import { Subscription } from 'rxjs';
 import { Post } from '../post';
 import { Task } from '../task';
@@ -17,7 +16,10 @@ export class TasksAndPostsComponent implements OnInit {
   newPost : Post = {title: '', body: ''};
   visibleNewTask : boolean = false;
   visibleNewPost : boolean = false;
-
+  sub1 : Subscription;
+  sub2 : Subscription;
+  sub3 : Subscription;
+  sub4 : Subscription;
 
   @Input()
   currentuser : User = new User();
@@ -39,8 +41,8 @@ export class TasksAndPostsComponent implements OnInit {
   {
     {
       this.currentuser.tasks.push(this.newTask);
-     this.utils.updateUser(this.currentuser._id , this.currentuser).subscribe(status => alert(status));
-     this.utils.getUser(this.currentuser._id).subscribe(data => this.currentuser = data )
+    this.sub1 = this.utils.updateUser(this.currentuser._id , this.currentuser).subscribe(status => alert(status));
+    this.sub2=  this.utils.getUser(this.currentuser._id).subscribe(data => this.currentuser = data )
 
     } 
   }
@@ -48,16 +50,34 @@ export class TasksAndPostsComponent implements OnInit {
 addPost()
 {
   this.currentuser.posts.push(this.newPost);
-  this.utils.updateUser(this.currentuser._id , this.currentuser).subscribe(status => alert(status));
-  this.utils.getUser(this.currentuser._id).subscribe(data => this.currentuser = data )
+ this.sub3 =  this.utils.updateUser(this.currentuser._id , this.currentuser).subscribe(status => alert(status));
+  this.sub4= this.utils.getUser(this.currentuser._id).subscribe(data => this.currentuser = data )
 }
   ngOnInit(): void {
   }
 
 
-ngOnDestroy()
-{
+  ngOnDestroy()
+  {
+    if(this.sub1 != null)
+    {
+      this.sub1.unsubscribe();
+    }
 
-}
+    if(this.sub2 != null)
+    {
+      this.sub2.unsubscribe();
+    }
+
+    if(this.sub3 != null)
+    {
+      this.sub3.unsubscribe();
+    }
+
+    if(this.sub4 != null)
+    {
+      this.sub4.unsubscribe();
+    }
+  }
  
 }
